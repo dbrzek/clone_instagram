@@ -46,7 +46,7 @@ class FirestoreMethods {
 
   Future<void> likePost(String postId, String uid, List likes) async {
     try {
-      if(likes.contains(uid)){
+      if (likes.contains(uid)) {
         await _firestore.collection('posts').doc(postId).update({
           'likes': FieldValue.arrayRemove([uid]),
         });
@@ -57,6 +57,47 @@ class FirestoreMethods {
       }
     } catch (err) {
       print(err.toString());
+    }
+  }
+
+  Future<void> postComment(
+    String postId,
+    String text,
+    String uid,
+    String name,
+    String profilPic,
+  ) async {
+    try {
+      if (text.isNotEmpty) {
+        String commentId = const Uuid().v1();
+        await _firestore
+            .collection('posts')
+            .doc(postId)
+            .collection('comments')
+            .doc(commentId)
+            .set({
+          'profilPic': profilPic,
+          'name': name,
+          'uid': uid,
+          'text': text,
+          'commentId': commentId,
+          'datePublished': DateTime.now(),
+        });
+      } else {
+        print('Text is empty');
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  // DELEITING POST
+
+  Future<void> deletePost(String postId) async {
+    try {
+      await _firestore.collection('posts').doc(postId).delete();
+    } catch (e) {
+      print(e.toString());
     }
   }
 }
