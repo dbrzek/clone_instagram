@@ -1,16 +1,48 @@
 # instagram_app_clone
 
-A new Flutter project.
+The app is a clone of Instagram and includes its basic functions. It was written in the **Flutter** framework and it saves the data of posts, comments and users in **Firebase**. Works in real time.
 
-## Getting Started
+## Table of Contents
+* [App Features](#app-features)
+* [Presentation](#presentation)
+* [Packages used in project](#packages-used-in-project)
+* [Project Status](#project-status)
+* [Sources](#sources)
+* [Contact](#contact)
 
-This project is a starting point for a Flutter application.
+## App Features
+- Responsive Instagram UI.<br>
+- Email & Password Authentication.<br>
+- Share Posts with Caption.<br>
+- Display Posts with Caption.<br>
+- Like & Comment on Posts.<br>
+- Search Users.<br>
+- Follow Users.<br>
+- Display User Posts, Followers & Following.<br>
+- EVERYTHING REAL TIME.<br>
+- Sign Out.<br><br>
 
-A few resources to get you started if this is your first Flutter project:
+## Presentation
+![Presentation](./presentation.gif)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Packages used in project:
+- [Provider](https://pub.dev/packages/provider)
+- [Firebase Core](https://pub.dev/packages/firebase_core)
+- [Firebase Auth](https://pub.dev/packages/firebase_auth)
+- [Firebase Storage](https://pub.dev/packages/firebase_storage)
+- [Cloud Firestore](https://pub.dev/packages/cloud_firestore)
+- [Cupertino Icons](https://pub.dev/packages/cupertino_icons)
+- [Image Picker](https://pub.dev/packages/image_picker)
+- [Intl](https://pub.dev/packages/intl)
+- [Flutter Staggered Grid View](https://pub.dev/packages/flutter_staggered_grid_view)
+- [Flutter Svg](https://pub.dev/packages/flutter_svg)
+- [UUID](https://pub.dev/packages/uuid)
+<br><br>
+## Project Status
+The project is a work in progress. 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Sources
+The application was created during the course Flutter & Firebase Tutorial: Build 5 Social Media Apps by RivaanRanawat.
+
+## Contact
+Created by [@dbrzek](mailto:brzek.damian@gmail.com) - feel free to contact me!
