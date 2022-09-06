@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:instagram_app_clone/responsive/web_screen_layout.dart';
 import 'package:instagram_app_clone/screens/login_screen.dart';
+import 'package:instagram_app_clone/utilis/global_variables.dart';
 import 'package:instagram_app_clone/utilis/utilis.dart';
 
 import '../responsive/mobile_screen_layout.dart';
@@ -85,10 +86,13 @@ class _LoginScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(
+          padding: screenSize.width > webScreenSize ? EdgeInsets.symmetric(
+            horizontal: screenSize.width/3,
+          ) : const EdgeInsets.symmetric(
             horizontal: 32,
           ),
           width: double.infinity,
@@ -106,7 +110,7 @@ class _LoginScreenState extends State<SignupScreen> {
                 height: 64,
               ),
               const SizedBox(
-                height: 64,
+                height: 30,
               ),
               //circular widget to accept and show our selectred file
               Stack(
@@ -132,7 +136,7 @@ class _LoginScreenState extends State<SignupScreen> {
                 ],
               ),
               const SizedBox(
-                height: 24,
+                height: 18,
               ),
               //text field input for username
               TextFieldInput(
@@ -150,7 +154,7 @@ class _LoginScreenState extends State<SignupScreen> {
                 textInputType: TextInputType.emailAddress,
               ),
               const SizedBox(
-                height: 24,
+                height: 18,
               ),
               //text field input for password
               TextFieldInput(
@@ -160,7 +164,7 @@ class _LoginScreenState extends State<SignupScreen> {
                 isPass: true,
               ),
               const SizedBox(
-                height: 24,
+                height: 18,
               ),
               //text field input for bio
               TextFieldInput(
@@ -169,7 +173,7 @@ class _LoginScreenState extends State<SignupScreen> {
                 textInputType: TextInputType.text,
               ),
               const SizedBox(
-                height: 24,
+                height: 18,
               ),
               //button login
               _isLoading
@@ -209,7 +213,7 @@ class _LoginScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    child: Text("Don't have an account?"),
+                    child: Text("Do you have an account?"),
                     padding: const EdgeInsets.symmetric(
                       vertical: 8,
                     ),
@@ -219,7 +223,7 @@ class _LoginScreenState extends State<SignupScreen> {
                     child: Center(
                       child: Container(
                         child: Text(
-                          "Sign up",
+                          "Log in",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         padding: const EdgeInsets.symmetric(

@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 
 import '../providers/user_provider.dart';
 import '../utilis/colors.dart';
+import '../utilis/global_variables.dart';
 import 'like_animation.dart';
 
 class PostCard extends StatefulWidget {
@@ -49,9 +50,15 @@ class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     final User? user = Provider.of<UserProvider>(context).getUser;
+    var width = MediaQuery.of(context).size.width;
 
     return Container(
-      color: mobileBackgroundColor,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: width > webScreenSize ? secondaryColor : mobileBackgroundColor,
+        ),
+        color: mobileBackgroundColor,
+      ),
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
         children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:instagram_app_clone/utilis/global_variables.dart';
 
 import '../screens/signup_screen.dart';
 import '../resources/auth_methods.dart';
@@ -67,12 +68,17 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 32,
-          ),
+          padding: screenSize.width > webScreenSize
+              ? EdgeInsets.symmetric(
+                  horizontal: screenSize.width/3,
+                )
+              : const EdgeInsets.symmetric(
+                  horizontal: 32,
+                ),
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

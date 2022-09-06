@@ -45,6 +45,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
       if (res == 'success') {
         showSnackBar('Posted', context);
         clearImage();
+        _descriptionController.clear();
       } else {
         showSnackBar(res, context);
       }
